@@ -3,7 +3,23 @@
     margin: 0;
     padding: 0px;
 }
-
+body{
+height: 100vh;
+background-color: #ededed;
+}
 .comida-container {
   /* Estilos para el contenedor de la lista */
+
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+}
+.card {
+  background-color: white;
+  border-radius: 8px;
+  height: 25%;
+  width: 30%;
+  margin: 1%;
+  padding: 3%;
 }
