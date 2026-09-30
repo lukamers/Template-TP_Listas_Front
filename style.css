@@ -5,7 +5,7 @@
 }
 body{
 height: 100vh;
-background-color: #ededed;
+background-color: beige;
 }
 .comida-container {
   /* Estilos para el contenedor de la lista */
@@ -17,9 +17,30 @@ background-color: #ededed;
 }
 .card {
   background-color: white;
+  box-shadow: 0px 4px 4px 0px #00000040;
   border-radius: 8px;
-  height: 25%;
+  height: 40%;
   width: 30%;
   margin: 1%;
   padding: 3%;
+  margin-left: 2%;
+}
+h2{
+font-size: 30px;
+}
+p{
+font-size: 20px;
+margin-top: -5%;
+color: orange;
+}
+.ingrediente{
+font-size: 16px;
+margin-top: 1%;
+}
+.categoria{
+margin-top: 20%;
+}
+h3{
+margin-top: 2%;
+margin-bottom: 2%;
 }

@@ -81,13 +81,36 @@ fetch('./data/comidas.json')          // Ruta al archivo JSON
 
 const container = document.getElementById('comidaContainer');
 
-
+function mostrarComidasConFor(){
 for (let i = 0; i < comidas.length; i++) {
   container.innerHTML += `
     <article class="card">
       <h2>${comidas[i].nombre}</h2>
       <p>${comidas[i].provincia}</p>
       <span>${comidas[i].categoria}</span>
+      <ul>
+      ${comidas[i].ingredientes.map(ingrediente => `<li>${ingrediente}<li/>`).join('')}
+      </ul<
     </article>
   `;
 }
+}
+
+function mostrarComidasConForEach(){
+
+  comidas.forEach(comida => {
+    container.innerHTML += `
+    <article class="card">
+      <p>${comida.provincia}</p>
+            <h2>${comida.nombre}</h2>
+
+      <h3>${comida.categoria}</h3>
+      <ul>
+      ${comida.ingredientes.map(ingrediente => `<li class='ingrediente'>${ingrediente}</li>`).join('')}
+      </ul>
+    </article>
+  `
+  });
+}
+
+mostrarComidasConForEach()
