@@ -19,23 +19,29 @@ background-color: beige;
   background-color: white;
   box-shadow: 0px 4px 4px 0px #00000040;
   border-radius: 8px;
-  height: 40%;
-  width: 30%;
+  height: 42%;
+  width: 22%;
   margin: 1%;
   padding: 3%;
   margin-left: 2%;
 }
 h2{
 font-size: 30px;
+margin-left:-6%;
 }
 p{
 font-size: 20px;
 margin-top: -5%;
 color: orange;
+margin-left:-6%;
 }
 .ingrediente{
-font-size: 16px;
-margin-top: 1%;
+font-size: 20px;
+margin-top: 2%;
+background-color: #ededed;
+padding: 2% 4%;
+border-radius: 10px;
+width: fit-content;
 }
 .categoria{
 margin-top: 20%;
@@ -43,4 +49,17 @@ margin-top: 20%;
 h3{
 margin-top: 2%;
 margin-bottom: 2%;
+margin-left:-6%;
+}
+.ingredientes{
+display: flex;
+  flex-wrap: wrap;
+gap: 4%;
+list-style: none;
+margin-left:-6%;
+}
+.addFood{
+  background-color: white;
+  margin-top: 20%;
+  margin-left: 30%;
 }

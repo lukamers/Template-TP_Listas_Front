@@ -71,7 +71,8 @@ fetch('./data/comidas.json')          // Ruta al archivo JSON
   .then(data => {                     // Aquí tienes acceso al JSON en formato de objeto JS
     console.log('Comidas cargadas desde JSON:');
     console.log(data);    
-    comidas = data;                   // Asignar el JSON a la variable comidas
+    comidas = data;  
+    mostrarComidasConForEach()                 // Asignar el JSON a la variable comidas
   })
   .catch(error => {                   // Manejo de errores al leer el archivo JSON
     console.error('Error al leer el archivo JSON:', error);
@@ -80,21 +81,6 @@ fetch('./data/comidas.json')          // Ruta al archivo JSON
 
 
 const container = document.getElementById('comidaContainer');
-
-function mostrarComidasConFor(){
-for (let i = 0; i < comidas.length; i++) {
-  container.innerHTML += `
-    <article class="card">
-      <h2>${comidas[i].nombre}</h2>
-      <p>${comidas[i].provincia}</p>
-      <span>${comidas[i].categoria}</span>
-      <ul>
-      ${comidas[i].ingredientes.map(ingrediente => `<li>${ingrediente}<li/>`).join('')}
-      </ul<
-    </article>
-  `;
-}
-}
 
 function mostrarComidasConForEach(){
 
@@ -105,7 +91,7 @@ function mostrarComidasConForEach(){
             <h2>${comida.nombre}</h2>
 
       <h3>${comida.categoria}</h3>
-      <ul>
+      <ul class= 'ingredientes'>
       ${comida.ingredientes.map(ingrediente => `<li class='ingrediente'>${ingrediente}</li>`).join('')}
       </ul>
     </article>
@@ -113,4 +99,27 @@ function mostrarComidasConForEach(){
   });
 }
 
-mostrarComidasConForEach()
+const agregarComidaConForm = document.addEventListener("submit", (event) =>{
+
+  alert("Comida agregada: "+ event.target.nombre.value)
+})
+
+
+
+
+/*
+function mostrarComidasConFor(){
+  for (let i = 0; i < comidas.length; i++) {
+    container.innerHTML += `
+      <article class="card">
+        <h2>${comidas[i].nombre}</h2>
+        <p>${comidas[i].provincia}</p>
+        <span>${comidas[i].categoria}</span>
+        <ul>
+        ${comidas[i].ingredientes.map(ingrediente => `<li>${ingrediente}<li/>`).join('')}
+        </ul<
+      </article>
+    `;
+  }
+  }
+  */
