@@ -72,7 +72,7 @@ fetch('./data/comidas.json')          // Ruta al archivo JSON
     console.log('Comidas cargadas desde JSON:');
     console.log(data);    
     comidas = data;  
-    mostrarComidasConForEach()                 // Asignar el JSON a la variable comidas
+    mostrarComidasConForEach(comidas)                 // Asignar el JSON a la variable comidas
   })
   .catch(error => {                   // Manejo de errores al leer el archivo JSON
     console.error('Error al leer el archivo JSON:', error);
@@ -82,9 +82,12 @@ fetch('./data/comidas.json')          // Ruta al archivo JSON
 
 const container = document.getElementById('comidaContainer');
 
-function mostrarComidasConForEach(){
+function mostrarComidasConForEach(lista){
 
-  comidas.forEach(comida => {
+
+  container.innerHTML = ""
+
+  lista.forEach(comida => {
     container.innerHTML += `
     <article class="card">
       <p>${comida.provincia}</p>
@@ -98,14 +101,39 @@ function mostrarComidasConForEach(){
   `
   });
 }
+const agregarComidaForm = document.getElementById("agregarComidaForm")
 
-const agregarComidaConForm = document.addEventListener("submit", (event) =>{
+agregarComidaForm.addEventListener("submit", (event) =>{
 
-  alert("Comida agregada: "+ event.target.nombre.value)
+  event.preventDefault()
+
+
+  let nuevacomida = {
+
+    nombre: event.target.nombre.value,
+    provincia: event.target.provincia.value,
+    categoria: event.target.categoria.value,
+    ingredientes: event.target.ingredientes.value.split(",")
+  }
+console.log(nuevacomida)
+
+comidas.push(nuevacomida)
+mostrarComidasConForEach(comidas)
+event.target.reset()
 })
 
 
+const filtroCategoria = document.getElementById("filtroCategoria")
 
+filtroCategoria.addEventListener("change", () => {
+
+ let comidasFiltradas = comidas.filter( comida => {
+  return comida.categoria.includes(filtroCategoria.value)
+})
+
+  mostrarComidasConForEach(comidasFiltradas)
+
+})
 
 /*
 function mostrarComidasConFor(){
