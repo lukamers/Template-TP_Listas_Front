@@ -67,3 +67,22 @@ margin-left:-6%;
   flex-direction: column;
   border-radius: 20px;  
 }
+.filtros{
+  width: 100%;
+  margin: 2%;
+}
+.filtro{
+width: 15.5%;
+height: 50px;
+border: none;
+outline: none;
+margin-left: 10px;
+border-radius: 10px;
+}
+.recbusqueda{
+width: 64%;
+height: 50px;
+border: none;
+outline: none;
+border-radius: 10px;
+}
